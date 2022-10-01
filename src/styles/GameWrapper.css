@@ -1,0 +1,14 @@
+.game-wrapper {
+    width: 360px;
+    height: 640px;
+    overflow: hidden;
+    margin: auto;
+    border: 1px solid #000000;
+}
+
+@media (min-height: 1280px) {
+    .game-wrapper {
+        width: 720px;
+        height: 1280px;
+    }
+}
