@@ -1,0 +1,22 @@
+@keyframes fade {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes fade-hard {
+    0% {opacity: 1;}
+    50% {opacity: 1;}
+    51% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+.splash-screen-fade {
+    animation-name: fade;
+    animation-duration: 4s;
+}
+
+.underscore {
+    animation-name: fade-hard;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}

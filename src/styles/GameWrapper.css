@@ -4,6 +4,7 @@
     overflow: hidden;
     margin: auto;
     border: 1px solid #000000;
+    background: radial-gradient(#15998e, #000000)
 }
 
 @media (min-height: 1280px) {

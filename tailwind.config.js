@@ -1,19 +1,28 @@
 /** @type {import('tailwindcss').Config} */
+
+const colors = require('tailwindcss/colors')
 module.exports = {
   content: [
       "./src/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
+    fontFamily: {
+      'title': ['"Ubuntu"', 'system-ui']
+    },
     screens: {
       'sm': '360px',
       'md': '720px',
       'lg': '1080px'
     },
     colors: {
-      'baby-blue': '#c0dcec',
-      'teal': '#48bcd1',
-      'spearmint': '#45b08c',
-      'teal-green': '#15998e'
+      ...colors,
+      "bright": "#E4d002",
+      "pale-tone": "#936A31",
+      "darkest": "#140201",
+      "dark": "#4A0604",
+      "half-tone": "#705614",
+      "offset-dark": "#49334D",
+      "offset-half": "#485F95"
     },
     extend: {},
   },
