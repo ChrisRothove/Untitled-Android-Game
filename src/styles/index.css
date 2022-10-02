@@ -3,6 +3,16 @@
 @tailwind screens;
 @tailwind utilities;
 
+:root {
+  --color-bright: #E4D002;
+  --color-pale: #936A31;
+  --color-half: #705614;
+  --color-dark: #4A0604;
+  --color-darkest: #140201;
+  --color-offset-dark: #49334D;
+  --color-offset-mid: #485F95;
+}
+
 * {
   box-sizing: border-box;
 }

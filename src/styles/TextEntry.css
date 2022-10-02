@@ -1,0 +1,22 @@
+.text-entry {
+    width: 200px;
+    height: 50px;
+    background-image: url("../images/text-entry.png");
+    background-size: 200px 50px;
+    image-rendering: pixelated;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+}
+
+.text-entry input {
+    background-color: transparent;
+    caret-color: var(--color-bright);
+    color: var(--color-bright);
+}
+
+.text-entry input:focus {
+    outline: none;
+}

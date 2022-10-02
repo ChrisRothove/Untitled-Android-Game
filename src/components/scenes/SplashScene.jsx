@@ -1,7 +1,7 @@
 import {CREATOR_SLUG} from "../../constants";
 import "../../styles/SplashScreen.css"
 
-export default function SplashScreen() {
+export default function SplashScene() {
     const mainStyles = [
         "splash-screen",
         "splash-screen-fade",
