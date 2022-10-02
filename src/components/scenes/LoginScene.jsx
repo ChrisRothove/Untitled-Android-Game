@@ -1,6 +1,6 @@
 import TextEntry from "../common/TextEntry";
 import "../../styles/LoginScene.css"
-import logo from "../../images/built-logo.png"
+import logo from "../../images/After-Us.png"
 
 export default function LoginScene() {
     const classes = [
