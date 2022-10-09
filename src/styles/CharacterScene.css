@@ -1,0 +1,10 @@
+.character-scene {
+    background-size: 360px 640px;
+    width: 360px;
+    height: 640px;
+    overflow: hidden;
+}
+
+.bg-28 {
+    background-image: url("../images/28-portrait.png");
+   }
