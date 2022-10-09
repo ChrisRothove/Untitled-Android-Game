@@ -8,6 +8,7 @@ export default function LoginScene() {
     const dispatch = useDispatch()
     const splashBack = () => dispatch({type: "scene", payload: "splash"})
     const classes = [
+        "gradient-base",
         "login-scene",
         "flex",
         "flex-col",

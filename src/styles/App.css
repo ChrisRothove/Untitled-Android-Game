@@ -4,3 +4,7 @@
   width: 100%;
   background-color: black;
 }
+
+.gradient-base {
+  background: radial-gradient(var(--color-half), var(--color-dark));
+}

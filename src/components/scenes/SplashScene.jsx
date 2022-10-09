@@ -6,11 +6,10 @@ import {useEffect} from "react";
 export default function SplashScene() {
     const dispatch = useDispatch()
     useEffect(() => {
-        setTimeout(() => dispatch({type: "scene", payload: "root"}), 4000)
+        setTimeout(() => dispatch({type: "scene", payload: "root"}), 1500)
     }, [])
     const mainStyles = [
-        "splash-screen",
-        "splash-screen-fade",
+        "gradient-base",
         //font
         "font-title",
         //size
