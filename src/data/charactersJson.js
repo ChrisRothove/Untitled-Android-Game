@@ -59,5 +59,6 @@ const characters = {
 }
 
 export default function retrieveCharacter(id) {
+    console.log(id, characters)
     return characters[id]
 }
