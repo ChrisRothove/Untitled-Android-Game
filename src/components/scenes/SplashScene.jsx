@@ -1,7 +1,13 @@
 import {CREATOR_SLUG} from "../../constants";
 import "../../styles/SplashScreen.css"
+import {useDispatch} from "react-redux";
+import {useEffect} from "react";
 
 export default function SplashScene() {
+    const dispatch = useDispatch()
+    useEffect(() => {
+        setTimeout(() => dispatch({type: "scene", payload: "root"}), 4000)
+    }, [])
     const mainStyles = [
         "splash-screen",
         "splash-screen-fade",

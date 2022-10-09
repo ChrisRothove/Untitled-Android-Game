@@ -1,18 +1,14 @@
-import logo from './images/logo.svg';
+
 import './styles/App.css';
 
 import {GameWrapper} from "./components/common/GameWrapper";
-import SplashScene from "./components/scenes/SplashScene";
-import TextEntry from "./components/common/TextEntry";
-import LoginScene from "./components/scenes/LoginScene";
+import SceneRouter from "./components/SceneRouter";
 
 function App() {
   return (
     <div className="App">
       <GameWrapper>
-          {/*<SplashScene/>*/}
-          {/*<TextEntry name={"Input"}/>*/}
-          <LoginScene />
+          <SceneRouter/>
       </GameWrapper>
     </div>
   );
