@@ -7,6 +7,7 @@ import {useDispatch} from "react-redux";
 export default function LoginScene() {
     const dispatch = useDispatch()
     const splashBack = () => dispatch({type: "scene", payload: "splash"})
+    const toCharacter = () => dispatch({type: "scene", payload: "character"})
     const classes = [
         "gradient-base",
         "login-scene",
@@ -29,7 +30,7 @@ export default function LoginScene() {
             <TextEntry type={"text"} name={"Username"}/>
             <TextEntry type={"password"} name={"Password"}/>
             <div className={buttonBox}>
-                <PixelButton text={"Login"} type={"button"} callback={splashBack} />
+                <PixelButton text={"Login"} type={"button"} callback={toCharacter} />
                 <PixelButton text={"Sign Up"} type={"button"} callback={splashBack} />
             </div>
         </div>
