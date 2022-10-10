@@ -17,12 +17,12 @@ module.exports = {
     colors: {
       ...colors,
       "bright": "#E4d002",
-      "pale-tone": "#936A31",
+      "pale": "#936A31",
       "darkest": "#140201",
       "dark": "#4A0604",
-      "half-tone": "#705614",
+      "half": "#705614",
       "offset-dark": "#49334D",
-      "offset-half": "#485F95"
+      "offset-mid": "#485F95"
     },
     extend: {},
   },

@@ -11,6 +11,7 @@
   --color-darkest: #140201;
   --color-offset-dark: #49334D;
   --color-offset-mid: #485F95;
+  --color-darkest-tint: #140201CC;
 }
 
 * {

@@ -1,3 +1,5 @@
+import characterReducer from "../store/characterReducer";
+
 export const parseATK = (character, player) => {
     const {attack, atkGrow, id} = character
     const {level} = player?.characters[id] || 1
@@ -5,19 +7,27 @@ export const parseATK = (character, player) => {
 }
 
 export const parseDEF = (character, player) => {
-    const {attack, defGrow, id} = character
+    const {defense, defGrow, id} = character
     const {level} = player?.characters[id] || 1
-    return Math.floor(attack + (level * defGrow))
+    return Math.floor(defense + (level * defGrow))
 }
 
 export const parseSPD = (character, player) => {
-    const {attack, spdGrow, id} = character
+    const {speed, spdGrow, id} = character
     const {level} = player?.characters[id] || 1
-    return Math.floor(attack + (level * spdGrow))
+    return Math.floor(speed + (level * spdGrow))
 }
 
 export const parseHP = (character, player) => {
-    const {attack, id} = character
+    const {hitPoints, id} = character
     const {level} = player?.characters[id] || 1
-    return Math.floor(attack + (level * .5))
+    return Math.floor((hitPoints * 2) + (level * .5))
+}
+
+export const parseGrowth = (growth) => {
+    switch (growth) {
+        case .3: return <span>&#10022;</span>
+        case .5: return <span>&#10022; &#10022; &#10022;</span>
+        case .7: return <span>&#10022; &#10022; &#10022; &#10022; &#10022;</span>
+    }
 }

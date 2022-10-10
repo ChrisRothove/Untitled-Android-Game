@@ -5,6 +5,11 @@
     overflow: hidden;
 }
 
+.stat-block {
+    background-color: var(--color-darkest-tint);
+    backdrop-filter: blur(2px);
+    border: 3px double var(--color-bright);
+}
 .bg-28 {
     background-image: url("../images/28-portrait.png");
    }
