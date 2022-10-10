@@ -79,7 +79,7 @@ export const StatBlock = ({stat, base, value, growth}) => {
     const starClasses = [
         "flex",
         "items-center",
-        "justify-center",
+        "justify-start",
         "font-black",
         "text-bright",
         "text-sm",
