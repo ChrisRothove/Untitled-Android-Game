@@ -3,6 +3,7 @@ import "../../../styles/CharacterScene.css"
 import {useDispatch, useSelector} from "react-redux";
 import PixelButton from "../../common/PixelButton";
 import {parseATK, parseDEF, parseGrowth, parseHP, parseSPD} from "../../../utils/maths";
+import {useState} from "react";
 
 export default function CharacterScene() {
     const id = useSelector((state) => state.character)
@@ -37,6 +38,8 @@ export default function CharacterScene() {
                 <StatBlock stat={"ATK"} base={character.attack} value={parseATK(character, player)} growth={character.atkGrow}/>
                 <StatBlock stat={"DEF"} base={character.defense} value={parseDEF(character, player)} growth={character.defGrow}/>
                 <StatBlock stat={"SPD"} base={character.speed} value={parseSPD(character, player)} growth={character.spdGrow}/>
+                <AbilityDescription type={"Passive"} ability={character.abilities.passive}/>
+                <AbilityDescription type={"Active"} ability={character.abilities.active}/>
             </div>
         </div>
     )
@@ -48,7 +51,7 @@ export const StatBlock = ({stat, base, value, growth}) => {
         "flex",
         "flex-col",
         "w-[90px]",
-        "m-2",
+        "m-1",
         "p-1",
     ].join(" ")
 
@@ -98,6 +101,70 @@ export const StatBlock = ({stat, base, value, growth}) => {
             <div className={starClasses}>
                 <span>{parseGrowth(growth)}</span>
             </div>
+        </div>
+    )
+}
+
+export const AbilityDescription = ({type, ability}) => {
+    const [open, setOpen] = useState(false);
+
+    const wrapperClasses = [
+        "w-[100%]",
+        "p-1",
+        "flex",
+        "flex-row",
+        "justify-between",
+        "items-center"
+    ].join(" ")
+
+    const typeBox = [
+        "stat-block",
+        "flex",
+        "flex-col",
+        "w-[90px]",
+        "p-1",
+        "items-center",
+        "justify-center",
+        "h-[90px]"
+    ].join(" ")
+
+    const typeSpan = [
+        "flex",
+        "items-center",
+        "justify-center",
+        "font-black",
+        "text-offset-mid",
+        "font-title",
+        "text-md",
+        "uppercase",
+        "bg-bright",
+        "w-[100%]",
+    ].join(" ")
+
+    const descBox = [
+        "stat-block",
+        "flex",
+        "flex-col",
+        "w-[260px]",
+        "p-1",
+        "items-center",
+        "justify-center",
+        "h-[90px]",
+        "text-bright",
+        "text-left"
+    ].join(" ")
+
+    return (
+        <div className={wrapperClasses}>
+            <div className={typeBox} onClick={() => setOpen(!open)}>
+                <div className={typeSpan}>
+                    {type}
+                </div>
+            </div>
+            {open ? <div className={descBox}>
+                <b>{ability?.name}</b>
+                <span>{ability?.desc}</span>
+            </div> : null}
         </div>
     )
 }
