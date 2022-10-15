@@ -2,8 +2,9 @@ import retrieveCharacter from "../../../data/charactersJson";
 import "../../../styles/CharacterScene.css"
 import {useDispatch, useSelector} from "react-redux";
 import PixelButton from "../../common/PixelButton";
-import {parseATK, parseDEF, parseGrowth, parseHP, parseSPD} from "../../../utils/maths";
-import {useState} from "react";
+import {parseATK, parseDEF, parseHP, parseSPD} from "../../../utils/maths";
+import AbilityDescription from "./AbilityDescription";
+import {StatBlock} from "./StatBlock";
 
 export default function CharacterScene() {
     const id = useSelector((state) => state.character)
@@ -45,126 +46,5 @@ export default function CharacterScene() {
     )
 }
 
-export const StatBlock = ({stat, base, value, growth}) => {
-    const wrapperClasses = [
-        "stat-block",
-        "flex",
-        "flex-col",
-        "w-[90px]",
-        "m-1",
-        "p-1",
-    ].join(" ")
 
-    const bigClasses = [
-        "flex",
-        "flex-row",
-        "w-[100%]",
-        "justify-between",
-        "items-center",
-        "font-extrabold",
-        "text-lg",
-        "font-title",
-        "text-bright"
-    ].join(" ")
 
-    const smallClasses = [
-        "flex",
-        "items-center",
-        "justify-center",
-        "font-black",
-        "text-offset-mid",
-        "font-title",
-        "text-md",
-        "uppercase",
-        "bg-bright"
-    ].join(" ")
-
-    const starClasses = [
-        "flex",
-        "items-center",
-        "justify-start",
-        "font-black",
-        "text-bright",
-        "text-sm",
-        "tracking-tight"
-    ].join(" ")
-
-    return (
-        <div className={wrapperClasses}>
-            <div className={bigClasses}>
-                <b>{stat}</b>
-                <span>{value}</span>
-            </div>
-            <div className={smallClasses}>
-                <span>base {base}</span>
-            </div>
-            <div className={starClasses}>
-                <span>{parseGrowth(growth)}</span>
-            </div>
-        </div>
-    )
-}
-
-export const AbilityDescription = ({type, ability}) => {
-    const [open, setOpen] = useState(false);
-
-    const wrapperClasses = [
-        "w-[100%]",
-        "p-1",
-        "flex",
-        "flex-row",
-        "justify-between",
-        "items-center"
-    ].join(" ")
-
-    const typeBox = [
-        "stat-block",
-        "flex",
-        "flex-col",
-        "w-[90px]",
-        "p-1",
-        "items-center",
-        "justify-center",
-        "h-[90px]"
-    ].join(" ")
-
-    const typeSpan = [
-        "flex",
-        "items-center",
-        "justify-center",
-        "font-black",
-        "text-offset-mid",
-        "font-title",
-        "text-md",
-        "uppercase",
-        "bg-bright",
-        "w-[100%]",
-    ].join(" ")
-
-    const descBox = [
-        "stat-block",
-        "flex",
-        "flex-col",
-        "w-[260px]",
-        "p-1",
-        "items-center",
-        "justify-center",
-        "h-[90px]",
-        "text-bright",
-        "text-left"
-    ].join(" ")
-
-    return (
-        <div className={wrapperClasses}>
-            <div className={typeBox} onClick={() => setOpen(!open)}>
-                <div className={typeSpan}>
-                    {type}
-                </div>
-            </div>
-            {open ? <div className={descBox}>
-                <b>{ability?.name}</b>
-                <span>{ability?.desc}</span>
-            </div> : null}
-        </div>
-    )
-}
